@@ -195,7 +195,7 @@ const FindPeople = () => {
 
 
                     <GoogleMap
-                        apiKey="AIzaSyD03SIsXckuaDkb2Sci_x5__PKRxdZT_uM"
+                        apiKey="AIzaSyDCYXna1JSdZ45rhtHqr6A6Su5GpjvJ2S8"
                         defaultCenter={{
                             lat: lat,
                             lng: lng

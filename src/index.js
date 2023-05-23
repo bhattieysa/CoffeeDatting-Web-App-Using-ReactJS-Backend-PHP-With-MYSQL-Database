@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Profile from './Pages/Dashboard/Profile';
 import Favourite from './Pages/Dashboard/Favourite';
 import FindPeople from './Pages/Dashboard/FindPeople';
+import Chat from './Pages/Dashboard/Chat';
 
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="dashboard/profile" element={<Profile />} />
         <Route path="dashboard/favourite" element={<Favourite />} />
         <Route path="dashboard/find-people" element={<FindPeople />} />
+        <Route path="dashboard/chat" element={<Chat />} />
       </Routes>
     </BrowserRouter>
   );
