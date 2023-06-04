@@ -82,7 +82,7 @@ const Profile = () => {
         console.log(event.target[1].value)
 
 
-        axios.post('http://coffee-dating.com/App/signup.php', {
+        axios.post('https://coffee-dating.com/App/signup.php', {
 
             image: uploadImage,
             name: event.target[1].value,
@@ -114,12 +114,12 @@ const Profile = () => {
 
     // console.log(location.state.selected)
     return (
-        <div className='flex flex-1 h-screen flex-col bg-[#0A2256]'>
+        <div className='flex flex-1  flex-col bg-[#0A2256]'>
             <Header />
             <div className='flex flex-col flex-1 justify-center py-10' >
                 <p className=' text-6xl font-bold text-[#B75830] justify-center flex'>Profile</p>
-                <div className=" flex items-center justify-center flex-col">
-                    <img className="w-36 h-36 rounded-full my-5" src={'http://coffee-dating.com/App/uploads/' + pic} />
+                <div className=" flex items-center lg:mx-0 mx-10 justify-center flex-col">
+                    <img className="w-36 h-36 rounded-full my-5" src={'https://coffee-dating.com/App/uploads/' + pic} />
                     <form onSubmit={handleSubmit} className='w-full md:w-1/3  items-center '   >
                         {/* <div className="w-full mb-10">
                             <div className="flex justify-center items-center">

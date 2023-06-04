@@ -6,7 +6,7 @@ const Marker = ({ data, className, lat, lng, markerId, onClick, ...props }) => {
 	return (
 		<img
 			className="w-12 h-12 rounded-lg "
-			src={'http://coffee-dating.com/App/uploads/' + data.Image}
+			src={'https://coffee-dating.com/App/uploads/' + data.Image}
 			// eslint-disable-next-line react/no-unknown-property
 			lat={lat}
             lng={lng}

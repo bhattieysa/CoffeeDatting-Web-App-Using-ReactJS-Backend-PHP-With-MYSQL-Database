@@ -1,5 +1,6 @@
 {
   "name": "coffee-dating",
+  "homepage": "http://coffee-dating.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,21 +9,26 @@
     "@testing-library/user-event": "^13.2.1",
     "axios": "^1.4.0",
     "country-dropdown-with-flags-for-react": "^1.1.4",
+    "cross-env": "^7.0.3",
     "flatlist-react": "^1.5.14",
     "google-maps-react-markers": "^1.2.3",
+    "http": "^0.0.1-security",
     "react": "^18.2.0",
     "react-client-session": "^0.0.8",
     "react-dom": "^18.2.0",
     "react-flags-select": "^2.2.3",
     "react-geolocated": "^4.1.0",
     "react-icons": "^4.8.0",
+    "react-iframe": "^1.8.5",
+    "react-redux": "^8.0.5",
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
+    "react-spinners": "^0.13.8",
     "reactjs-popup": "^2.0.5",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "NODE_PATH=./src react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

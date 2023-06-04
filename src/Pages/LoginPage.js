@@ -11,8 +11,8 @@ import { useNavigate } from "react-router-dom";
 import { ReactSession } from 'react-client-session';
 const Login = () => {
 
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+    const [email, setEmail] = useState(null)
+    const [password, setPassword] = useState(null)
     const navigate = useNavigate();
 
     const handleSubmit = (event) => {
@@ -20,67 +20,44 @@ const Login = () => {
 
         setEmail(event.target[0].value)
         setPassword(event.target[1].value)
-
-        var formdata = new FormData();
-        //add three variable to form
-        formdata.append(email, email);
-        formdata.append(password, password);
-        formdata.append("rate", "4");
-
-
-
-        axios.post('http://coffee-dating.com/Website/login.php', {
-            email: email,
-            password: password,
-            
-        }, {
-            params: { action: "update-item" },
-            headers: { 'Content-Type': 'application/json' },
-
-        }).then(response =>{
-            alert(response.data.msg)
-
-           
-
-            if(response.data.error==false){
-                ReactSession.setStoreType("localStorage");
-                ReactSession.set("name", response.data.Name);
-                ReactSession.set("image", response.data.Image);
-                ReactSession.set("gender", response.data.Gender);
-                ReactSession.set("phone", response.data.Phone);
-                ReactSession.set("id", response.data.id);
-                ReactSession.set("email", response.data.email);
-                ReactSession.set("password", response.data.password);
-                ReactSession.set("age", response.data.Age);
-                ReactSession.set("country", response.data.Country);
-                ReactSession.set("city", response.data.City);
-                navigate('/dashboard/')
-            }
-        }
-        ).catch(err => {
-            console.log(err)
-            return null
-        })
-
-        // axios.post(`http://coffee-dating.com/App/login.php`,
-
-        // {},
-        // params: { action: "update-user" },
-
-        //     {
-        //         headers:{
-        //             "Content-Type": "multipart/form-data" ,
-        //             'Accept': 'Token',
-        //             "Access-Control-Allow-Origin": "*",
-
-        //         }
-        //     }
-
-
-        // ).then((response) => {
-        //     console.log(response.data)
-        // })
     }
+
+
+if(email!=null && password!=null){
+    axios.post('https://coffee-dating.com/Website/login.php', {
+        email: email,
+        password: password,
+        
+    }, {
+        params: { action: "update-item" },
+        headers: { 'Content-Type': 'application/json' },
+
+    }).then(response =>{
+        alert(response.data.msg)
+
+       
+
+        if(response.data.error==false){
+            ReactSession.setStoreType("localStorage");
+            ReactSession.set("name", response.data.Name);
+            ReactSession.set("image", response.data.Image);
+            ReactSession.set("gender", response.data.Gender);
+            ReactSession.set("phone", response.data.Phone);
+            ReactSession.set("id", response.data.id);
+            ReactSession.set("email", response.data.email);
+            ReactSession.set("password", response.data.password);
+            ReactSession.set("age", response.data.Age);
+            ReactSession.set("country", response.data.Country);
+            ReactSession.set("city", response.data.City);
+            navigate('/dashboard/')
+        }
+    }
+    ).catch(err => {
+        console.log(err)
+        return null
+    })
+
+}
 
 
 
@@ -94,8 +71,8 @@ const Login = () => {
            
 <Header/>
             <div className='flex flex-col flex-1 justify-center' >
-                <p className='text-6xl font-bold text-[#B75830] justify-center  flex'>Please Login</p>
-                <div className=" flex items-center  flex-col">
+                <p className='text-5xl lg:text-6xl font-bold text-[#B75830] justify-center  flex'>Please Login</p>
+                <div className=" flex items-center lg:mx-0 mx-10 flex-col">
                     <form onSubmit={handleSubmit} className='w-full md:w-1/3  items-center mt-20'   >
                         <div className=" flex items-center justify-center">
                             <div className="w-full mb-10">

@@ -64,7 +64,7 @@ const Signup = () => {
 console.log(event.target[1].value)
 
 
-            axios.post('http://coffee-dating.com/Website/signup.php', {
+            axios.post('https://coffee-dating.com/Website/signup.php', {
 
                 image: uploadImage,
                 name: event.target[1].value,
@@ -102,14 +102,12 @@ console.log(event.target[1].value)
     // console.log(location.state.selected)
     return (
         <div className='flex flex-1 flex-col bg-[#0A2256]'>
-
             <Header />
-            <div className='flex flex-col flex-1 justify-center' >
+            <div className='flex flex-col lg:mx-0 mx-10 flex-1 justify-center' >
 
-                <p className=' text-6xl font-bold text-[#B75830] justify-center flex'>Create Account</p>
+                <p className=' my-4 text-3xl lg:text-5xl font-bold text-[#B75830] justify-center flex'>Create Account</p>
                 <div className=" flex items-center justify-center flex-col">
                     <img className="w-36 h-36 rounded-full my-5" src={image == null ? require("../images/user.jpeg") : image} />
-
                     <form onSubmit={handleSubmit} className='w-full md:w-1/3  items-center '   >
 
                         <div className="w-full mb-10">
@@ -252,8 +250,6 @@ console.log(event.target[1].value)
                         <p className='  text-[16px]' >Already Have Account? <Link to="/login" className='text-btn font-bold text-[18px]'>Login</Link></p>
                     </div>
                 </div>
-
-
             </div>
         </div>
     )
